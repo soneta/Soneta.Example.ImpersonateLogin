@@ -1,0 +1,58 @@
+﻿@using System.Configuration
+@{
+    ViewBag.Title = "Strona startowa";
+}
+
+<div class="jumbotron">
+    <h2>Soneta.ImpersonateLogin</h2>
+</div>
+<div class="row">
+    <div class="col-md-11">
+        <h3>Logowanie do enova365 za pośrednictwem token</h3>
+        <p>
+            Aplikacja pokazuje w jaki sposób należy przeprowadzić logowanie do enova365
+            wykorzystując zaimplementowany mechanizm token. Do prawidłowego działania
+            aplikacji konieczne jest prawidłowe skonfigurowanie zmiennych dostępnych w web.config:
+            <ul>
+                <li>
+                    <span style="width: 250px; display:block;"><b>enova365User</b></span>
+                    <span>nazwa użytkownika dla którego ma nastąpić logowanie</span><br />
+                </li>
+                <li>
+                    <span style="width: 250px; display:block;"><b>enova365Db</b></span>
+                    <span>nazwa bazy danych w której użytkownik jest założony z odpowiednimi uprawnieniami</span><br />
+                </li>
+                <li>
+                    <span style="width: 250px; display:block;"><b>enova365Key</b></span>
+                    <span>klucz autoryzacyjny skonfigurowany po stronie enova365</span>
+                </li>
+                <li>
+                    <span style="width: 250px; display:block;"><b>enova365Service</b></span>
+                    <span>adres domeny gdzie zainstalowana jest enova365 np. http://localhost:1080</span>
+                </li>
+            </ul>
+        </p>
+        <p><a id="365Link" href="#" class="btn btn-primary btn-lg">zaloguj do enova365</a></p>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#365Link').on('click', function () {
+                $.ajax('/Login365', {
+                    type: "POST"
+                })
+                .then(function (data) {
+                    if (data.ErrorHandle) {
+                        alert(data.ErrorHandle);
+                        return;
+                    }
+
+                    if (data.Token) {
+                        window.location.href = '@ConfigurationManager.AppSettings["enova365Service"]/Impersonate?t=' + data.Token + '&db=' + data.Db;
+                    }
+
+                });
+            })
+        });
+    </script>
