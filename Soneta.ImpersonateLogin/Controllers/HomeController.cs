@@ -39,7 +39,9 @@ namespace Soneta.ImpersonateLogin.Controllers {
                 }
 
                 result = new JsonNetResult(new {
-                    ErrorHandle = "Niepoprawne dane logowania",
+                    ErrorHandle = !String.IsNullOrEmpty(tokenResult.ExceptionMessage) ? 
+                                tokenResult.ExceptionMessage : 
+                                "Niepoprawne dane logowania"
                 });
             }
             catch (Exception exc) {
