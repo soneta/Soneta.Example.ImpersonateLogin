@@ -27,9 +27,9 @@ namespace Soneta.ImpersonateLogin.Controllers {
                 };
 
                 var binding = new BasicHttpBinding(BasicHttpSecurityMode.None);
-                var endpoint = new EndpointAddress(url + "/Business/BusinessProvider.svc");
+                var endpoint = new EndpointAddress(url + "/Business/TokenService.svc");
 
-                var bus = new ServiceReference1.BusinessProviderClient(binding, endpoint);
+                var bus = new ServiceReference1.TokenServiceClient(binding, endpoint);
                 var tokenResult = bus.GenerateToken(tokenInfo);
                 if (tokenResult.IsAuthenticated) {
                     return new JsonNetResult(new {

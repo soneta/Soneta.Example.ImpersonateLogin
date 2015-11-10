@@ -19,17 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1080/Business/BusinessProvider.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1080/Business/TokenService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BusinessProvider.xsd" MetadataType="Schema" ID="f7e18a8f-502b-4597-b5b6-b92c11322d28" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd0" />
-    <MetadataFile FileName="BusinessProvider.wsdl" MetadataType="Wsdl" ID="cb13e722-bae8-4c91-89a1-9112d1f93254" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?wsdl" />
-    <MetadataFile FileName="BusinessProvider1.xsd" MetadataType="Schema" ID="d7d29816-5be8-417e-88cd-e80d1963ed6b" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd5" />
-    <MetadataFile FileName="BusinessProvider2.xsd" MetadataType="Schema" ID="8c047d38-3651-4c14-bf22-33a55cbc6b9e" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd3" />
-    <MetadataFile FileName="BusinessProvider3.xsd" MetadataType="Schema" ID="646202c9-48ee-4ada-b791-6ed922878e15" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd1" />
-    <MetadataFile FileName="BusinessProvider4.xsd" MetadataType="Schema" ID="56f53c33-23db-4e3c-9683-ef9da8fc8a06" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd4" />
-    <MetadataFile FileName="BusinessProvider.disco" MetadataType="Disco" ID="7da49aa2-c0cd-48b4-a2c7-d543bcad171c" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?disco" />
-    <MetadataFile FileName="BusinessProvider5.xsd" MetadataType="Schema" ID="85ffac11-548d-4cc9-94fd-719fa1065257" SourceId="1" SourceUrl="http://localhost:1080/Business/BusinessProvider.svc?xsd=xsd2" />
+    <MetadataFile FileName="TokenService.xsd" MetadataType="Schema" ID="4e2f0f0f-076d-4074-a5b8-124ecef087d0" SourceId="1" SourceUrl="http://localhost:1080/Business/TokenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TokenService.wsdl" MetadataType="Wsdl" ID="5d43bac1-9bb2-4371-beac-393881510a1b" SourceId="1" SourceUrl="http://localhost:1080/Business/TokenService.svc?wsdl" />
+    <MetadataFile FileName="TokenService1.xsd" MetadataType="Schema" ID="f2afd019-55ea-4128-8961-12ab32b9512d" SourceId="1" SourceUrl="http://localhost:1080/Business/TokenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TokenService.disco" MetadataType="Disco" ID="7104c4eb-5cb4-4341-b193-74bf20b34ba3" SourceId="1" SourceUrl="http://localhost:1080/Business/TokenService.svc?disco" />
+    <MetadataFile FileName="TokenService2.xsd" MetadataType="Schema" ID="d9409909-d596-42f8-b469-9c48c744690f" SourceId="1" SourceUrl="http://localhost:1080/Business/TokenService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
