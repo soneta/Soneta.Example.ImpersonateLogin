@@ -36,23 +36,26 @@
     </div>
 </div>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#365Link').on('click', function () {
-                $.ajax('/Login365', {
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#365Link').on('click', function () {
+            $.ajax('/Login365', {
                     type: "POST"
                 })
-                .then(function (data) {
+                .then(function(data) {
                     if (data.ErrorHandle) {
                         alert(data.ErrorHandle);
                         return;
                     }
 
                     if (data.Token) {
-                        window.location.href = '@ConfigurationManager.AppSettings["enova365Service"]/Impersonate?t=' + data.Token + '&db=' + data.Db;
+                        var url = '@ConfigurationManager.AppSettings["enova365Service"]/Impersonate?' +
+                            't=' + data.Token +
+                            '&db=' + data.Db;
+                        window.open(url, "_blank");
                     }
 
                 });
-            })
         });
-    </script>
+    });
+</script>

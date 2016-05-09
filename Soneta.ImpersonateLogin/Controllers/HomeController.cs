@@ -52,7 +52,7 @@ namespace Soneta.ImpersonateLogin.Controllers {
     }
 
     public class JsonNetResult : ActionResult {
-        private object _obj { get; set; }
+        private readonly object _obj;
         public JsonNetResult(object obj) {
             _obj = obj;
         }
