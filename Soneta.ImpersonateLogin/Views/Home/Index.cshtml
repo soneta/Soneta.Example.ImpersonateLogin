@@ -51,7 +51,8 @@
                     if (data.Token) {
                         var url = '@ConfigurationManager.AppSettings["enova365Service"]/Impersonate?' +
                             't=' + data.Token +
-                            '&db=' + data.Db;
+                            '&db=' + data.Db +
+                            '&path=@ConfigurationManager.AppSettings["enova365Path"]';
                         window.open(url, "_blank");
                     }
 
