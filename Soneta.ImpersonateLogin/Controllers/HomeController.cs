@@ -26,7 +26,8 @@ namespace Soneta.ImpersonateLogin.Controllers {
                     Key = key
                 };
 
-                var binding = new BasicHttpBinding(BasicHttpSecurityMode.None);
+                var httpMode = url.ToLower().StartsWith("https") ? BasicHttpSecurityMode.Transport : BasicHttpSecurityMode.None;
+                var binding = new BasicHttpBinding(httpMode);
                 var endpoint = new EndpointAddress(url + "/Business/TokenService.svc");
 
                 var bus = new ServiceReference1.TokenServiceClient(binding, endpoint);
